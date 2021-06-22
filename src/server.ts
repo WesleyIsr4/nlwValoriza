@@ -1,19 +1,19 @@
-import 'reflect-metadata'
-import 'dotenv/config'
+import 'reflect-metadata';
+import 'dotenv/config';
 
 import express, { Request, Response, NextFunction } from 'express';
-import 'express-async-errors'
+import 'express-async-errors';
 
 import routes from 'routes';
 
-import './database'
-import './container'
+import './database';
+import './container';
 import AppError from 'Error/AppError';
 import rateLimit from 'middlewares/rateLimit';
 const app = express();
 
-app.use(express.json())
-app.use(rateLimit)
+app.use(rateLimit);
+app.use(express.json());
 app.use(routes);
 
 app.use(

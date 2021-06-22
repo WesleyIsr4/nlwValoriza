@@ -1,7 +1,7 @@
-import { Request, Response, NextFunction } from "express";
-import {RateLimiterPostgres} from 'rate-limiter-flexible'
-import Pool from 'pg'
-import AppError from "Error/AppError";
+import { Request, Response, NextFunction } from 'express';
+import { RateLimiterPostgres } from 'rate-limiter-flexible';
+import { Pool } from 'pg';
+import AppError from 'Error/AppError';
 
 const client = new Pool({
   host: 'localhost',
@@ -9,21 +9,25 @@ const client = new Pool({
   database: 'nlwValoriza',
   user: 'postgres',
   password: 'postgres',
-})
+});
 
 const limiter = new RateLimiterPostgres({
   storeClient: client,
   keyPrefix: 'rateLimiter',
   points: 5,
-  duration: 1
-})
+  duration: 5,
+});
 
-export default async function rateLimit(request: Request, response: Response, next: NextFunction): Promise<void>{
-  try{
-    await limiter.consume(request.ip)
+export default async function rateLimit(
+  request: Request,
+  response: Response,
+  next: NextFunction,
+): Promise<void> {
+  try {
+    await limiter.consume(request.ip);
 
-    return next()
+    return next();
   } catch {
-    throw new AppError("Too many requests", 429)
+    throw new AppError('Too many requests', 429);
   }
 }
