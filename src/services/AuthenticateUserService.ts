@@ -1,5 +1,6 @@
 import { compare } from "bcryptjs";
 import User from "entities/User";
+import AppError from "Error/AppError";
 import { sign } from "jsonwebtoken";
 import IUsersRepository from "repositories/IUsersRepository";
 import { inject, injectable } from "tsyringe";
@@ -26,13 +27,13 @@ class AuthenticateUserService {
     const user = await this.usersRepository.findByEmail(email)
 
     if(!user){
-      throw new Error('Email or password incorrect')
+      throw new AppError('Email or password incorrect')
     }
 
     const passwordMatched = await compare(password, user.password)
 
     if(!passwordMatched){
-      throw new Error("Email or password incorrect")
+      throw new AppError("Email or password incorrect")
     }
 
     const {secret, expiresIn} = authConfig.jwt;

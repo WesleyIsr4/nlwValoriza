@@ -9,9 +9,11 @@ import routes from 'routes';
 import './database'
 import './container'
 import AppError from 'Error/AppError';
+import rateLimit from 'middlewares/rateLimit';
 const app = express();
 
 app.use(express.json())
+app.use(rateLimit)
 app.use(routes);
 
 app.use(
