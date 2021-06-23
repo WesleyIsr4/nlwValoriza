@@ -9,6 +9,11 @@ class UsersRepository implements IUsersRepository {
   constructor() {
     this.ormRepository = getRepository(User);
   }
+  public async findAll(): Promise<User[]> {
+    const users = await this.ormRepository.find();
+
+    return users;
+  }
 
   public async findById(id: string): Promise<User> {
     return this.ormRepository.findOne({
