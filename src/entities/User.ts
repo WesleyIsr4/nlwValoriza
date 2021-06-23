@@ -1,6 +1,11 @@
-import { Exclude } from "class-transformer";
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-
+import { Exclude } from 'class-transformer';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity('users')
 class User {
@@ -11,7 +16,7 @@ class User {
   name: string;
 
   @Column({
-    unique: true
+    unique: true,
   })
   email: string;
 
@@ -29,4 +34,4 @@ class User {
   updated_at: Date;
 }
 
-export default User
+export default User;

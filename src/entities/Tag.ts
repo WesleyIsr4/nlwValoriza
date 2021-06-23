@@ -1,5 +1,10 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity('tags')
 class Tag {
@@ -16,4 +21,4 @@ class Tag {
   updated_at: Date;
 }
 
-export default Tag
+export default Tag;

@@ -1,10 +1,9 @@
-import CreateUserController from "controllers/CreateUserController";
-import { Router } from "express";
+import CreateUserController from 'controllers/CreateUserController';
+import { Router } from 'express';
 
+const userRouter = Router();
+const userController = new CreateUserController();
 
-const userRouter = Router()
-const userController = new CreateUserController()
+userRouter.post('/', userController.create);
 
-userRouter.post('/', userController.create)
-
-export default userRouter
+export default userRouter;

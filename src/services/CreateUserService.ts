@@ -1,8 +1,8 @@
-import { hash } from "bcryptjs";
-import User from "entities/User";
-import AppError from "Error/AppError";
-import IUsersRepository from "repositories/IUsersRepository";
-import { inject, injectable } from "tsyringe";
+import { hash } from 'bcryptjs';
+import User from 'entities/User';
+import AppError from 'Error/AppError';
+import IUsersRepository from 'repositories/IUsersRepository';
+import { inject, injectable } from 'tsyringe';
 
 interface IRequest {
   name: string;
@@ -15,32 +15,36 @@ interface IRequest {
 class CreateUserService {
   constructor(
     @inject('UsersRepository')
-    private usersRepository: IUsersRepository
-  ){}
+    private usersRepository: IUsersRepository,
+  ) {}
 
-  public async execute({name, email, password, admin}: IRequest): Promise<User> {
-
-    if(!email){
-      throw new AppError("E-mail incorrect")
+  public async execute({
+    name,
+    email,
+    password,
+    admin,
+  }: IRequest): Promise<User> {
+    if (!email) {
+      throw new AppError('E-mail incorrect');
     }
 
     const checkUser = await this.usersRepository.findByEmail(email);
 
-    if(checkUser){
-      throw new AppError("E-mail already exists")
+    if (checkUser) {
+      throw new AppError('E-mail already exists');
     }
 
-    const passwordHash = await hash(password, 8)
+    const passwordHash = await hash(password, 8);
 
-    const user = await this.usersRepository.create({
+    const user = this.usersRepository.create({
       name,
       email,
       password: passwordHash,
-      admin
-    })
+      admin,
+    });
 
-    return user
+    return user;
   }
 }
 
-export default CreateUserService
+export default CreateUserService;
