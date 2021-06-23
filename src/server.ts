@@ -1,19 +1,21 @@
 import 'reflect-metadata';
 import 'dotenv/config';
-
-import express, { Request, Response, NextFunction } from 'express';
 import 'express-async-errors';
 
+import express, { Request, Response, NextFunction } from 'express';
+import rateLimit from 'middlewares/rateLimit';
+import AppError from 'Error/AppError';
 import routes from 'routes';
+import uploadConfig from './config/upload';
 
 import './database';
 import './container';
-import AppError from 'Error/AppError';
-import rateLimit from 'middlewares/rateLimit';
+
 const app = express();
 
 app.use(rateLimit);
 app.use(express.json());
+app.use('/files', express.static(uploadConfig.uploadFolder));
 app.use(routes);
 
 app.use(

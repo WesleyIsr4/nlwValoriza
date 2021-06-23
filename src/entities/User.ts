@@ -1,4 +1,4 @@
-import { Exclude } from 'class-transformer';
+import { Exclude, Expose } from 'class-transformer';
 import {
   Column,
   CreateDateColumn,
@@ -27,11 +27,19 @@ class User {
   @Column()
   admin: boolean;
 
+  @Column('varchar')
+  photo: string;
+
   @CreateDateColumn()
   created_at: Date;
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @Expose({ name: 'photo_url' })
+  getPhotoUrl(): string | null {
+    return this.photo ? `${process.env.APP_API_URL}/files/${this.photo}` : null;
+  }
 }
 
 export default User;
