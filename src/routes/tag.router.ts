@@ -9,5 +9,6 @@ tagsRouter.use(ensureAdmin);
 const tagController = new CreateTagController();
 
 tagsRouter.post('/', tagController.create);
+tagsRouter.get('/', tagController.list);
 
 export default tagsRouter;
