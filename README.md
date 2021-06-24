@@ -46,6 +46,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [ ] Editar usuário
 - [ ] Recuperar senha
 
+## Diagrama
+
+![Users](https://user-images.githubusercontent.com/30372910/123325652-a89c3500-d50e-11eb-81d9-e40e3da1b92b.png)
+
+
 ## 🚀 Como executar
 
 - Clone o projeto utilizando o comando `git clone https://github.com/WesleyIsr4/nlwValoriza`
