@@ -55,7 +55,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - Clone o projeto utilizando o comando `git clone https://github.com/WesleyIsr4/nlwValoriza`
 - Instale as dependencias do projeto com o comando `yarn install ou npm install`
-- Configure o ormconfig.json para o seu banco de dados
+- Configure o `ormconfig.json` para o seu banco de dados
 - Execute o servidor com o comando `yarn dev:server ou npm dev:server`
 
 
