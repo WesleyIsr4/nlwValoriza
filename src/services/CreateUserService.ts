@@ -22,7 +22,7 @@ class CreateUserService {
     name,
     email,
     password,
-    admin,
+    admin = false,
   }: IRequest): Promise<User> {
     if (!email) {
       throw new AppError('E-mail incorrect');
