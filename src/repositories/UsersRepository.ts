@@ -9,6 +9,11 @@ class UsersRepository implements IUsersRepository {
   constructor() {
     this.ormRepository = getRepository(User);
   }
+  public async findAdmin(admin: boolean): Promise<User | undefined> {
+    const userAdmin = await this.ormRepository.findOne();
+
+    return userAdmin;
+  }
   public async findAll(): Promise<User[]> {
     const users = await this.ormRepository.find();
 

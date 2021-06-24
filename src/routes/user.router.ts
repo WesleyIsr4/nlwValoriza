@@ -18,6 +18,7 @@ userRouter.patch(
   upload.single('photo'),
   photoController.update,
 );
+userRouter.put('/', ensureAuthenticated, userController.update);
 userRouter.get('/', ensureAuthenticated, ensureAdmin, userController.list);
 
 export default userRouter;
