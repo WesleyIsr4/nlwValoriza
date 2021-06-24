@@ -34,5 +34,5 @@ app.use(
 );
 
 app.listen(3333, () => {
-  console.log('Servidor decolando na porta 3333! 🚀');
+  console.log('Server taking off on port 3333! 🚀');
 });

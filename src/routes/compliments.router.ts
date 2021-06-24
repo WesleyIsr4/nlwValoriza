@@ -7,5 +7,6 @@ complimentsRouter.use(ensureAuthenticated);
 const complimentsController = new CreateComplimentsController();
 
 complimentsRouter.post('/', complimentsController.create);
+complimentsRouter.get('/', complimentsController.list);
 
 export default complimentsRouter;

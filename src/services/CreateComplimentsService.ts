@@ -28,7 +28,7 @@ class CreateComplimentsService {
     message,
   }: IRequest): Promise<Compliments> {
     if (user_sender === user_receiver) {
-      throw new AppError('Incorrect user receiver');
+      throw new AppError("Can't send compliments to yourself");
     }
 
     const userReceiverExists = await this.usersRepository.findById(
