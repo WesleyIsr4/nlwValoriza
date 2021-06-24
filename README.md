@@ -43,8 +43,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [x] Autenticação JWT
 - [x] Limite de requisião a api
 - [x] Injeção de dependencia
-- [] Editar usuário
-- [] Recuperar senha
+- [ ] Editar usuário
+- [ ] Recuperar senha
 
 ## 🚀 Como executar
 
