@@ -16,11 +16,8 @@
 
 ## 💻 Projeto
 
-O valoriza é uma aplicação que consiste em criação de usuários, tags e elogios. Nele fazemos o cadastro de usuário, com atualização de fotos, sistema de admin.
-criação de tags no qual serão elogios criado para elogiar um outro usuário pela sua proatividade, sua capacidade de ajudar e etc... e as tags só pode ser criadas
-por administradores da api.
-
-E o cadastro de elogios que um outro usuário vai esta recebendo, com uma tag e uma message feito pelo usuário.
+O Valoriza é uma aplicação que consiste em criação de usuários e elogios por meio de tags e comentários. Nele, fazemos (i) o cadastro de usuário, com atualização de fotos, config de perfil de admin, (ii) criação de tags (disponível apenas para admins da api) que serão utilizadas ao elogiar um outro usuário (por exemplo, pela sua proatividade, sua capacidade de ajudar, ...). 
+O elogio é cadastrado ao realizar um comentário destinado a um usuário específico e vinculando a tag relacionada.
 
 ## ✨ Tecnologias
 
@@ -44,7 +41,29 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [x] Limite de requisião a api
 - [x] Injeção de dependencia
 - [x] Editar usuário
-- [ ] Recuperar senha
+- [x] Aplicar conceitos SOLID e DDD
+
+
+## Regras
+
+- Cadastro de usuário
+
+  - [x] Não é permitido cadastrar mais de um usuário com o mesmo e-mail
+  - [x] Não é permitido cadastrar usuário sem e-mail
+  - [x] Não é permitido lista usuários que não sejam administradores
+
+- Cadastro de TAG
+
+  - [x] Não é permitido cadastrar tag sem nome
+  - [x] Não é permitido cadastrar mais de uma tag com o mesmo nome
+  - [x] Não é permitido o cadastro por usuários que não sejam administradores
+
+- Cadastro de elogios
+
+  - [x] Não é permitido um usuário cadastrar um elogio para si
+  - [x] Não é permitido cadastrar elogios para usuários inválidos
+  - [x] O usuário precisa estar autenticado na aplicação
+
 
 ## Diagrama
 
