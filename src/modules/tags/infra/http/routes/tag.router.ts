@@ -10,5 +10,6 @@ const tagController = new TagController();
 
 tagsRouter.post('/', tagController.create);
 tagsRouter.get('/', tagController.list);
+tagsRouter.delete('/:id', tagController.destroy);
 
 export default tagsRouter;

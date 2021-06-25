@@ -8,6 +8,14 @@ class TagsRepository implements ITagsRepository {
   constructor() {
     this.ormRepository = getRepository(Tag);
   }
+  public async delete(id: string): Promise<void> {
+    this.ormRepository.delete(id);
+  }
+  public async findById(id: string): Promise<Tag | undefined> {
+    const tag = await this.ormRepository.findOne(id);
+
+    return tag;
+  }
   public async findAll(): Promise<Tag[]> {
     const tag = await this.ormRepository.find();
     return tag;
