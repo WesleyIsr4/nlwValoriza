@@ -16,7 +16,7 @@
 
 ## 💻 Projeto
 
-O Valoriza é uma aplicação que consiste em criação de usuários e elogios por meio de tags e comentários. Nele, fazemos (i) o cadastro de usuário, com atualização de fotos, config de perfil de admin, (ii) criação de tags (disponível apenas para admins da api) que serão utilizadas ao elogiar um outro usuário (por exemplo, pela sua proatividade, sua capacidade de ajudar, ...). 
+O Valoriza é uma aplicação que consiste em criação de usuários e elogios por meio de tags e comentários. Nele, fazemos (i) o cadastro de usuário, com atualização de fotos, config de perfil de admin, (ii) criação de tags (disponível apenas para admins da api) que serão utilizadas ao elogiar um outro usuário (por exemplo, pela sua proatividade, sua capacidade de ajudar, ...).
 O elogio é cadastrado ao realizar um comentário destinado a um usuário específico e vinculando a tag relacionada.
 
 ## ✨ Tecnologias
@@ -29,7 +29,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Express](https://expressjs.com/pt-br/)
 - [Multer](https://github.com/expressjs/multer)
 - [Tsyringer](https://github.com/microsoft/tsyringe)
-- [Class-Transform](https://github.com/typestack/class-transformer) 
+- [Class-Transform](https://github.com/typestack/class-transformer)
 
 ## 🔶 O que foi feito ate agora
 
@@ -42,7 +42,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [x] Injeção de dependencia
 - [x] Editar usuário
 - [x] Aplicar conceitos SOLID e DDD
-
 
 ## Regras
 
@@ -64,18 +63,16 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   - [x] Não é permitido cadastrar elogios para usuários inválidos
   - [x] O usuário precisa estar autenticado na aplicação
 
-
 ## Diagrama
 
 ![Users](https://user-images.githubusercontent.com/30372910/123325652-a89c3500-d50e-11eb-81d9-e40e3da1b92b.png)
-
 
 ## 🚀 Como executar
 
 - Clone o projeto utilizando o comando `git clone https://github.com/WesleyIsr4/nlwValoriza`
 - Instale as dependencias do projeto com o comando `yarn install ou npm install`
 - Configure o `ormconfig.json` para o seu banco de dados
+- Execute o comando `yarn ou npm` + `typeorm migrations:run` para a criação das tabelas
 - Execute o servidor com o comando `yarn dev:server ou npm dev:server`
-
 
 A aplicação pode ser acessada em [`localhost:3333`](http://localhost:3333).
