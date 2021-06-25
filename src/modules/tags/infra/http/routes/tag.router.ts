@@ -5,11 +5,11 @@ import TagController from '../controller/TagController';
 
 const tagsRouter = Router();
 tagsRouter.use(ensureAuthenticated);
-tagsRouter.use(ensureAdmin);
+
 const tagController = new TagController();
 
-tagsRouter.post('/', tagController.create);
+tagsRouter.post('/', ensureAdmin, tagController.create);
 tagsRouter.get('/', tagController.list);
-tagsRouter.delete('/:id', tagController.destroy);
+tagsRouter.delete('/:id', ensureAdmin, tagController.destroy);
 
 export default tagsRouter;
