@@ -41,7 +41,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [x] Limite de requisião a api
 - [x] Injeção de dependencia
 - [x] Editar usuário
-- [ ] Recuperar senha
+- [x] Aplicar conceitos SOLID e DDD
 
 ## Diagrama
 
